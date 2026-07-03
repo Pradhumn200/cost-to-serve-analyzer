@@ -1,0 +1,11 @@
+{
+    "dataset_months": 23.947368421052634,
+    "avg_monthly_orders": 126.06813186813186,
+    "current_problem_rate": 0.09605829744948659,
+    "avg_reverse_cost": 35.03887711162636,
+    "avg_order_value": 69.28603842331897,
+    "median_impact": -11.476130514301985,
+    "percentile_5": -229.41913526353775,
+    "percentile_95": 209.9501473564659,
+    "n_sims": 10000
+}

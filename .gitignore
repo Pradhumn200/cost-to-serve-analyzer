@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+ENV/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Project Data (Exclude large datasets and databases)
+data/raw/
+data/processed/olist.db
+
+# Output files that are too large (if any)
+# Keep small output files (.csv, .png, .json) for showcase in README
+!outputs/corridor_summary.csv
+!outputs/*.png
+!outputs/*.json
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

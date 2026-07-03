@@ -1,0 +1,12 @@
+pandas
+numpy
+sqlalchemy
+scikit-learn
+xgboost
+imbalanced-learn
+statsmodels
+streamlit
+plotly
+geopy
+requests
+matplotlib
