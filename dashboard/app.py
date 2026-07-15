@@ -109,11 +109,24 @@ st.sidebar.markdown("This dashboard analyzes delivery cancellations (Return-To-O
 # Check database configuration
 db_configured = False
 db_path = os.path.join("data", "processed", "olist.db")
+zip_path = os.path.join("data", "processed", "olist.zip")
+
+# Auto-extract database if it doesn't exist but zip archive is present
+if not os.path.exists(db_path) and os.path.exists(zip_path):
+    import zipfile
+    with st.spinner("Extracting SQLite database from zip archive..."):
+        try:
+            os.makedirs(os.path.dirname(db_path), exist_ok=True)
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(os.path.dirname(db_path))
+        except Exception as e:
+            st.sidebar.error(f"Failed to extract database: {str(e)}")
+
 if os.path.exists(db_path):
     db_configured = True
     st.sidebar.success("Database Connected!")
 else:
-    st.sidebar.warning("Database file not found. Ensure load_and_clean.py was run.")
+    st.sidebar.warning("Database file not found.")
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Project Quick Stats:**")
